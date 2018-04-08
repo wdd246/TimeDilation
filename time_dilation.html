@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script>
+    const c = 299792458; // m/s
+    var ch = c*3.6; // km/h
+    //var t = parseFloat(prompt("Czas  godzinach / dniach / latach "));
+    //var v = parseFloat(prompt("ułamek prędkości światła = 0-1"));
+    //var v = parseFloat(prompt("Prędkość w m/s"));
+    //var y = t*(1/(Math.sqrt(1-((Math.pow(v,2))/(Math.pow(c,2))))));
+    var t = 10;
+
+    
+    document.write("<table><tr><th>czas dla załogi</th><th>% prędkości światła</th><th>Czas na ziemi</th><th>prękość km/h</th><th>droga na statku km</th><th>(droga na ziemi km)</th></tr>");
+    var v=0.9;
+    for(var i=0;v<1;i++){
+        v+=0.001; 
+        
+        Math.round(((v)*100)/100);
+
+        var y = t*(1/(Math.sqrt(1-(Math.pow((v*c),2))/(Math.pow(c,2)))));
+        var vk = ch*v;
+        var s_s = vk*t;
+        var s_z = vk*y;
+
+        document.write("<tr><td>"+t+"</td><td>"+v+"</td><td>"+y+"</td><td>"+vk+"</td><td>"+s_s+"</td><td>"+s_z+"</td></tr>");    
+    //console.log("Tobie minęło czasu "+t+" a na ziemi "+y);
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>
